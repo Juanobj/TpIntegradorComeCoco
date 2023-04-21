@@ -1,0 +1,1 @@
+[  {    "id": 1,    "idAlumno": 1,    "idMateria": 1,    "fecha": "2022-01-30T00:00:00.000Z"  },  {    "id": 2,    "idAlumno": 2,    "idMateria": 1,    "fecha": "2022-01-30T00:00:00.000Z"  },  {    "id": 3,    "idAlumno": 3,    "idMateria": 2,    "fecha": "2022-02-05T00:00:00.000Z"  }]

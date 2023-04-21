@@ -1,0 +1,36 @@
+[
+    {
+      "id": 1,
+      "nombre": "Luis",
+      "apellido": "González",
+      "dni": "34567890",
+      "direccion": "Av. 9 de Julio 123",
+      "telefono": "022811234567",
+      "email": "luis.gonzalez@gmail.com",
+      "fechaNacimiento": "1980-05-20T00:00:00.000Z",
+      "materias": [1, 3]
+    },
+    {
+      "id": 2,
+      "nombre": "María",
+      "apellido": "Martínez",
+      "dni": "23456789",
+      "direccion": "Calle Mitre 456",
+      "telefono": "022815432109",
+      "email": "maria.martinez@hotmail.com",
+      "fechaNacimiento": "1985-12-10T00:00:00.000Z",
+      "materias": [2, 4]
+    },
+    {
+      "id": 3,
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "dni": "45678901",
+      "direccion": "Calle Belgrano 789",
+      "telefono": "022812345678",
+      "email": "juan.perez@yahoo.com",
+      "fechaNacimiento": "1978-09-03T00:00:00.000Z",
+      "materias": [1, 4]
+    }
+  ]
+  

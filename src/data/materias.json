@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "nombre": "Matemática",
+      "cargaHoraria": 4
+    },
+    {
+      "id": 2,
+      "nombre": "Programación",
+      "cargaHoraria": 6
+    },
+    {
+      "id": 3,
+      "nombre": "Historia",
+      "cargaHoraria": 3
+    }
+  ]
+  
