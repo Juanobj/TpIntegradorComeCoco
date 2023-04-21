@@ -3,7 +3,9 @@ import { profesorService } from '../services/profesor.service';
 import { Profesor } from '../models/Profesor';
 
 interface Props {
-}
+    profesores: Profesor[];
+  }
+  
 
 const ProfesorList: React.FC<Props> = () => {
   const [profesores, setProfesores] = React.useState<Profesor[]>([]);

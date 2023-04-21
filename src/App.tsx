@@ -2,29 +2,42 @@ import React from 'react';
 import AlumnoList from './components/AlumnoList';
 import ProfesorList from './components/ProfesorList';
 import { AlumnoService } from './services/alumno.service';
-import { profesorService } from './services/profesor.service';
+import { Profesor, profesorService } from './services/profesor.service'; // Se importa la interfaz ProfesorService
+import { Alumno } from './models/Alumno';
+
+const appProfesorService: ProfesorService = {
+  crearProfesor: (profesor: Profesor) => profesorService.crearProfesor(profesor),
+  obtenerProfesores: () => profesorService.obtenerProfesores(),
+  obtenerProfesorPorId: (id: number) => profesorService.obtenerProfesorPorId(id),
+  actualizarProfesor: (id: number, profesorActualizado: Profesor) =>
+    profesorService.actualizarProfesor(id, profesorActualizado),
+  eliminarProfesor: (id: number) => profesorService.eliminarProfesor(id),
+};
 
 function App() {
   const alumnoService = new AlumnoService();
-  const profesorService = new profesorService();
+  const profesorService = appProfesorService;
+
+  const [alumnos, setAlumnos] = React.useState<Alumno[]>([]);
+  const [profesores, setProfesores] = React.useState<Profesor[]>([]);
 
   const mostrarAlumnos = () => {
     const alumnos = alumnoService.getAll();
-    console.log(alumnos);
-  }
+    setAlumnos(alumnos);
+  };
 
-  const mostrarProfesores = () => {
-    const profesores = profesorService.getAll();
-    console.log(profesores);
-  }
+  const mostrarProfesores = async () => {
+    const profesores = await profesorService.obtenerProfesores();
+    setProfesores(profesores);
+  };
 
   return (
     <div>
       <h1>Bienvenido a la aplicación del Colegio</h1>
       <button onClick={mostrarAlumnos}>Mostrar Alumnos</button>
       <button onClick={mostrarProfesores}>Mostrar Profesores</button>
-      <AlumnoList alumnos={[]} />
-      <ProfesorList profesores={[]} />
+      <AlumnoList alumnos={alumnos} />
+      <ProfesorList profesores={profesores} />
     </div>
   );
 }

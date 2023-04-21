@@ -58,12 +58,14 @@ function eliminarProfesor(id: number): Profesor | undefined {
 }
 
 // Se exporta un objeto que contiene todas las funciones definidas
+
 export const profesorService = {
   crearProfesor,
   obtenerProfesores,
   obtenerProfesorPorId,
   actualizarProfesor,
   eliminarProfesor,
-  getAll: obtenerProfesores // Agregar la propiedad getAll con el valor de la función obtenerProfesores
+  getAll: () => profesores,
 };
+export { Profesor };
 

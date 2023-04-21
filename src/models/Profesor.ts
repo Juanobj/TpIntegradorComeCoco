@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export interface Profesor {
   id: number; // Identificador único del profesor
   nombre: string; // Nombre del profesor
