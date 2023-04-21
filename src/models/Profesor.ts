@@ -1,4 +1,5 @@
 export interface Profesor {
+  [x: string]: any;
   id: number; // Identificador único del profesor
   nombre: string; // Nombre del profesor
   apellido: string; // Apellido del profesor
