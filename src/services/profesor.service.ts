@@ -64,4 +64,6 @@ export const profesorService = {
   obtenerProfesorPorId,
   actualizarProfesor,
   eliminarProfesor,
+  getAll: obtenerProfesores // Agregar la propiedad getAll con el valor de la función obtenerProfesores
 };
+
