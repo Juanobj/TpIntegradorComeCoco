@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Definición del componente Materia
 function Materia() {
   return (
     <div>
@@ -8,4 +9,6 @@ function Materia() {
   );
 }
 
-export default Materia;
+export default Materia; // Exportar el componente Materia
+
+
