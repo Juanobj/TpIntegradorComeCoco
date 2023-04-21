@@ -1,0 +1,41 @@
+├── node_modules/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── ...
+├── src/
+│   ├── App.tsx
+│   ├── index.tsx
+│   ├── components/
+│   │   ├── Alumno.tsx
+│   │   ├── Profesor.tsx
+│   │   ├── Matricula.tsx
+│   │   ├── Materia.tsx
+│   │   └── ...
+│   ├── controllers/
+│   │   ├── alumnos.controller.ts
+│   │   ├── profesores.controller.ts
+│   │   ├── matriculas.controller.ts
+│   │   ├── materias.controller.ts
+│   │   └── ...
+│   ├── models/
+│   │   ├── Alumno.ts
+│   │   ├── Profesor.ts
+│   │   ├── Matricula.ts
+│   │   ├── Materia.ts
+│   │   └── ...
+│   ├── services/
+│   │   ├── alumno.service.ts
+│   │   ├── profesor.service.ts
+│   │   ├── matricula.service.ts
+│   │   ├── materia.service.ts
+│   │   └── ...
+│   └── styles/
+│       ├── App.css
+│       ├── index.css
+│       └── ...
+├── package-lock.json
+├── tsconfig.json
+└── package.json
+
+

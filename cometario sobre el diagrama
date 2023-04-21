@@ -1,0 +1,16 @@
+En este diagrama, la clase App es la clase principal que hace uso de los servicios AlumnoService, ProfesorService, 
+MateriaService y MatriculaService, que se encargan de interactuar con los datos de la aplicación.
+
+Cada una de estas clases de servicio se comunica con las clases de modelo 
+Alumno, Profesor, Materia y Matricula, que contienen las propiedades de cada uno de los objetos 
+de la aplicación, como su nombre, apellido, email, etc.
+
+Cabe destacar que la relación entre la clase Matricula y las clases Alumno y Materia es de composición, 
+ya que una matrícula está compuesta por un objeto Alumno y un objeto Materia. 
+Mientras que la relación entre la clase Alumno y la clase Matricula y entre la clase Materia 
+y la clase Matricula es de agregación, ya que un objeto Alumno o un objeto Materia pueden tener varias matrículas.
+
+Los modificadores de acceso están presentes en las propiedades de las clases y los métodos, 
+lo que indica la visibilidad que tiene cada uno de ellos en relación con otras clases. 
+Los métodos y propiedades públicas se indican 
+con el símbolo +, los privados con el símbolo - y los protegidos con el símbolo #.
