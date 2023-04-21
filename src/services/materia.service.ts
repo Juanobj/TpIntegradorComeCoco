@@ -9,14 +9,17 @@ export class MateriaService {
     this.idCounter = 1;
   }
 
+  // Retorna todas las materias
   getAllMaterias(): Materia[] {
     return this.materias;
   }
 
+  // Retorna una materia según su id
   getMateriaById(id: number): Materia | undefined {
     return this.materias.find((materia) => materia.id === id);
   }
 
+  // Crea una nueva materia
   createMateria(materia: Materia): Materia {
     materia.id = this.idCounter++;
     materia.alumnos = [];
@@ -24,6 +27,7 @@ export class MateriaService {
     return materia;
   }
 
+  // Actualiza una materia existente según su id
   updateMateria(id: number, updatedMateria: Materia): Materia | undefined {
     const index = this.materias.findIndex((materia) => materia.id === id);
     if (index !== -1) {
@@ -33,6 +37,7 @@ export class MateriaService {
     return undefined;
   }
 
+  // Elimina una materia según su id
   deleteMateria(id: number): Materia | undefined {
     const index = this.materias.findIndex((materia) => materia.id === id);
     if (index !== -1) {
@@ -43,6 +48,7 @@ export class MateriaService {
     return undefined;
   }
 
+  // Inscribir un alumno en una materia según su id de materia y de alumno
   inscribirAlumnoEnMateria(materiaId: number, alumnoId: number): boolean {
     const materia = this.materias.find((materia) => materia.id === materiaId);
     if (materia) {
@@ -56,6 +62,7 @@ export class MateriaService {
     return false;
   }
 
+  // Desinscribir un alumno en una materia según su id de materia y de alumno
   desinscribirAlumnoEnMateria(materiaId: number, alumnoId: number): boolean {
     const materia = this.materias.find((materia) => materia.id === materiaId);
     if (materia) {
@@ -68,3 +75,4 @@ export class MateriaService {
     return false;
   }
 }
+/*Resumen: la clase MateriaService define métodos para realizar operaciones relacionadas a la gestión de materias*/
