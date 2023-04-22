@@ -2,6 +2,7 @@ import { Alumno } from '../models/Alumno';
 
 export class AlumnoService {
   private alumnos: Alumno[] = [];
+  static getAll: any;
 
   // Método para obtener todos los alumnos
   getAll(): Alumno[] {

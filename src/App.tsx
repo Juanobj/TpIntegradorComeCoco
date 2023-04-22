@@ -1,46 +1,32 @@
-import React from 'react';
-import AlumnoList from './components/AlumnoList';
-import ProfesorList from './components/ProfesorList';
-import { AlumnoService } from './services/alumno.service';
-
-
-
- // Se importa la interfaz ProfesorService
-import { Alumno } from './models/Alumno';
-import { Profesor } from './models/Profesor';
-
-const appProfesorService: Profesor = {
-  crearProfesor: (profesor: Profesor) => appProfesorService.crearProfesor(profesor),
-  obtenerProfesores: () => appProfesorService.obtenerProfesores(),
-  obtenerProfesorPorId: (id: number) => appProfesorService.obtenerProfesorPorId(id),
-  actualizarProfesor: (id: number, profesorActualizado: Profesor) => appProfesorService.actualizarProfesor(id, profesorActualizado),
-  eliminarProfesor: (id: number) => appProfesorService.eliminarProfesor(id),
-  id: 0,
-  nombre: '',
-  apellido: '',
-  dni: '',
-  direccion: '',
-  telefono: '',
-  email: '',
-  fechaNacimiento: undefined,
-  materias: []
-};
+import React from "react";
+import { Alumno } from "./models/Alumno";
+import { Profesor } from "./models/Profesor";
+import { AlumnoService } from "./services/alumno.service";
+import { profesorService } from "./services/profesor.service";
 
 function App() {
-  const alumnoService = new AlumnoService();
-  const profesorService = appProfesorService;
-
-  const [alumnos, setAlumnos] = React.useState<Alumno[]>([]);
-  const [profesores, setProfesores] = React.useState<Profesor[]>([]);
-
   const mostrarAlumnos = () => {
-    const alumnos = alumnoService.getAll();
-    setAlumnos(alumnos);
+    const alumnosListDiv = document.getElementById("alumnosList")!;
+    const alumnosList = AlumnoService.getAll();
+    const alumnosListHTML = `
+      <h2>Lista de Alumnos</h2>
+      <ul>
+        ${alumnosList.map((alumno: Alumno) => `<li>${alumno.nombre} (${alumno.edad} años)</li>`).join("")}
+      </ul>
+    `;
+    alumnosListDiv.innerHTML = alumnosListHTML;
   };
 
-  const mostrarProfesores = async () => {
-    const profesores = await profesorService.obtenerProfesores();
-    setProfesores(profesores);
+  const mostrarProfesores = () => {
+    const profesoresListDiv = document.getElementById("profesoresList")!;
+    const profesoresList = profesorService.getAll();
+    const profesoresListHTML = `
+      <h2>Listado de Profesores</h2>
+      <ul>
+        ${profesoresList.map((profesor: Profesor) => `<li>${profesor.nombre} (${profesor.materia})</li>`).join("")}
+      </ul>
+    `;
+    profesoresListDiv.innerHTML = profesoresListHTML;
   };
 
   return (
@@ -48,11 +34,10 @@ function App() {
       <h1>Bienvenido a la aplicación del Colegio</h1>
       <button onClick={mostrarAlumnos}>Mostrar Alumnos</button>
       <button onClick={mostrarProfesores}>Mostrar Profesores</button>
-      <AlumnoList alumnos={alumnos} />
-      <ProfesorList profesores={profesores} />
+      <div id="alumnosList"></div>
+      <div id="profesoresList"></div>
     </div>
   );
-  
 }
 
 export default App;
