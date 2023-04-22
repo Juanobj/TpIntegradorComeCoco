@@ -7,6 +7,6 @@ export interface Profesor {
   direccion: string; // Dirección del profesor
   telefono: string; // Teléfono del profesor
   email: string; // Email del profesor
-  fechaNacimiento: Date; // Fecha de nacimiento del profesor
+  fechaNacimiento: Date | undefined; // Fecha de nacimiento del profesor (opcional)
   materias: number[]; // Lista de IDs de las materias que dicta el profesor
 }

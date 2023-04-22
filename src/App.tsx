@@ -2,17 +2,19 @@ import React from 'react';
 import AlumnoList from './components/AlumnoList';
 import ProfesorList from './components/ProfesorList';
 import { AlumnoService } from './services/alumno.service';
-import { Profesor, profesorService } from './services/profesor.service';
+
+
 
  // Se importa la interfaz ProfesorService
 import { Alumno } from './models/Alumno';
+import { Profesor } from './models/Profesor';
 
 const appProfesorService: Profesor = {
-  crearProfesor: (profesor: Profesor) => profesorService.crearProfesor(profesor),
-  obtenerProfesores: () => profesorService.obtenerProfesores(),
-  obtenerProfesorPorId: (id: number) => profesorService.obtenerProfesorPorId(id),
-  actualizarProfesor: (id: number, profesorActualizado: Profesor) => profesorService.actualizarProfesor(id, profesorActualizado),
-  eliminarProfesor: (id: number) => profesorService.eliminarProfesor(id),
+  crearProfesor: (profesor: Profesor) => appProfesorService.crearProfesor(profesor),
+  obtenerProfesores: () => appProfesorService.obtenerProfesores(),
+  obtenerProfesorPorId: (id: number) => appProfesorService.obtenerProfesorPorId(id),
+  actualizarProfesor: (id: number, profesorActualizado: Profesor) => appProfesorService.actualizarProfesor(id, profesorActualizado),
+  eliminarProfesor: (id: number) => appProfesorService.eliminarProfesor(id),
   id: 0,
   nombre: '',
   apellido: '',
