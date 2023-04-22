@@ -67,5 +67,3 @@ export const profesorService = {
   eliminarProfesor,
   getAll: () => profesores,
 };
-export { Profesor };
-
